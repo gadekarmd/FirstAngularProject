@@ -1,0 +1,24 @@
+<p>excerise works!</p>
+
+<!-- ngif -> age > 55, name is  senior citizen
+ng for -> iterate users -> age - > "name"  is a senior citizen -->
+<div *ngFor="let user of users">
+    <div *ngIf="user.age > '55'">
+        {{user.name}} is a senior citizen.
+    </div>
+</div>
+
+<!-- user to enter any vowels(a, e, i o, u), print any word starting with vowels -->
+<input type="text" [(ngModel)]="vowel" />
+<div [ngSwitch]="vowel">
+    <div *ngSwitchCase="'a'"> Apple</div>
+    <div *ngSwitchCase="'e'"> Elephant</div>
+    <div *ngSwitchCase="'i'"> Incredible</div>
+    <div *ngSwitchCase="'o'"> Orange</div>
+    <div *ngSwitchCase="'u'"> Umbrella</div>
+    <div *ngSwitchDefault> Enter an vowel !</div>
+</div>
+
+<!-- number -> even -> div : red , odd -> div -> green-->
+<input type="text" placeholder="Enter a number" [(ngModel)]="num">
+<div [ngStyle]="{'background-color' : num % 2 == 0 ? 'red' : 'green'}"> Red color if number is even and green if it is odd</div>
